@@ -7,13 +7,15 @@ public class Program {
         int num = 0;
         int sum;
 
-        while(num != 42) {
+        while(true) {
             if(numIn.hasNextInt())
                 num = numIn.nextInt();
             else {
                 System.err.println("Error: input is not valid");
                 return ;
             }
+            if(num == 42)
+                break ;
             sum = sumOfDigit(num);
             if(isPrime(sum))
                 requestCount++;
