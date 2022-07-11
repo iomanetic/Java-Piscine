@@ -1,19 +1,16 @@
+package org.example;
+
 import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
         Scanner numIn = new Scanner(System.in);
         int requestCount = 0;
-        int num = 0;
+        int num;
         int sum;
 
         while(true) {
-            if(numIn.hasNextInt())
-                num = numIn.nextInt();
-            else {
-                System.err.println("Error: input is not valid");
-                return ;
-            }
+            num = numIn.nextInt();
             if(num == 42)
                 break ;
             sum = sumOfDigit(num);

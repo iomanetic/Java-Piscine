@@ -1,3 +1,5 @@
+package org.example;
+
 import java.util.Scanner;
 
 public class Program {
@@ -8,7 +10,7 @@ public class Program {
         int iterCount = 0;
 
         if(num < 2) {
-            System.out.println("IllegalArgument\n");
+            System.err.println("Illegal Argument\n");
             return ;
         }
         if(num == 2) {
@@ -24,5 +26,6 @@ public class Program {
             numDel++;
         }
         System.out.println("true " + iterCount + '\n');
+
     }
 }
