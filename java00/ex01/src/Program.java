@@ -8,22 +8,22 @@ public class Program {
         int iterCount = 0;
 
         if(num < 2) {
-            System.err.println("Illegal Argument\n");
+            System.err.println("Illegal Argument");
             return (-1);
         }
         if(num == 2) {
-            System.out.println("true 1" + '\n');
+            System.out.println("true 1");
             return (0);
         }
         while(numDel * numDel <= num) {
             iterCount++;
             if(num % numDel == 0) {
-                System.out.println("false " + iterCount + '\n');
+                System.out.println("false " + iterCount);
                 return (0);
             }
             numDel++;
         }
-        System.out.println("true " + iterCount + '\n');
+        System.out.println("true " + iterCount);
         return (0);
 
     }
