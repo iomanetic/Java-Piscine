@@ -55,7 +55,7 @@ public class Program {
 
         if(minNumOfInput < 1 || minNumOfInput > 9)
             System.exit(isError());
-        while(countGrades < 4) {
+        while(countGrades < 5) {
             numOfInput = input.nextInt();
             if(numOfInput < 1 || numOfInput > 9)
                 System.exit(isError());
