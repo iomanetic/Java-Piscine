@@ -64,7 +64,6 @@ public class Program {
         }
         input.nextLine();
         return (minNumOfInput);
-
     }
 
     private static void printStat(int minGrade, byte numOfWeek) {
