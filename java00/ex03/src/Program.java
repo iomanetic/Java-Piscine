@@ -48,16 +48,16 @@ public class Program {
     }
 
     private static int getMinGrade(Scanner input) {
-        int countGrades = 1;
+        int countGrades = 0;
+        int minNumOfInput = 0;
         int numOfInput;
-        int minNumOfInput = input.nextInt();
 
-        if(minNumOfInput < 1 || minNumOfInput > 9)
-            System.exit(isError());
         while(countGrades < 5) {
             numOfInput = input.nextInt();
             if(numOfInput < 1 || numOfInput > 9)
                 System.exit(isError());
+            if(countGrades == 0)
+                minNumOfInput = numOfInput;
             if(minNumOfInput > numOfInput)
                 minNumOfInput = numOfInput;
             countGrades++;
