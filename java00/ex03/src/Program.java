@@ -17,7 +17,6 @@ public class Program {
                 break ;
             inputWeek = input.nextLine();
         }
-        System.out.println();
         for(byte countOfWeek = 1; countOfWeek < numOfWeek; countOfWeek++)
             printStat(unpackGrade(allGrades, countOfWeek), countOfWeek);
     }
