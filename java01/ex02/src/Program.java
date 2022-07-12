@@ -3,5 +3,15 @@ public class Program {
         UsersArrayList UserList = new UsersArrayList();
 
         UserList.addUser(new User("Karim", 1000));
+        UserList.addUser(new User("Karim", 1000));
+        UserList.addUser(new User("Karim", 1000));
+        UserList.addUser(new User("Karim", 1000));
+        UserList.addUser(new User("Karim", 1000));
+        UserList.addUser(new User("Karim", 1000));
+        UserList.addUser(new User("Karim", 1000));
+        UserList.addUser(new User("Karim", 1000));
+        UserList.addUser(new User("Karim", 1000));
+        UserList.addUser(new User("Karim", 1000));
+        UserList.addUser(new User("Karim", 1000));
     }
 }

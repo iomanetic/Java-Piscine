@@ -9,15 +9,15 @@ public class UsersArrayList implements UserList {
     private User[] userList;
 
     public UsersArrayList() {
-        this.userList = new User[11];
+        this.userList = new User[10];
         this.size = 1;
         this.userCount = 0;
     }
 
     public void addUser(User user) {
         if(this.userCount + 1 > ARRAY_SIZE * size) {
-            increaseList();
             size *= 2;
+            increaseList();
         }
         userList[userCount] = user;
         userCount++;
@@ -38,10 +38,8 @@ public class UsersArrayList implements UserList {
     private void increaseList() {
         User[] userListNew = new User[ARRAY_SIZE * size];
 
-        for(int count = 0; userList[count] != null; count++) {
+        for(int count = 0; count < userCount; count++)
             userListNew[count] = userList[count];
-            count++;
-        }
         userList = userListNew;
     }
 }
