@@ -38,7 +38,7 @@ public class UsersArrayList implements UserList {
     private void increaseList() {
         User[] userListNew = new User[ARRAY_SIZE * size];
 
-        for(int count = 0; userList[count] != null ; count++) {
+        for(int count = 0; userList[count] != null; count++) {
             userListNew[count] = userList[count];
             count++;
         }
