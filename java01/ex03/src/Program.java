@@ -1,7 +1,7 @@
 import java.util.UUID;
 
 public class Program {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws TransactionNotFoundException {
         TransactionsLinkedList list = new TransactionsLinkedList();
         Transaction[] arr;
         UUID ud;
@@ -22,12 +22,7 @@ public class Program {
                             new User("Sasha", 10000000), -100));
 
         arr = list.convertListToArray(list);
-        try {
-            list.deleteTransactionByIndeficator(arr[4].getUuid());
-        } catch(TransactionNotFoundException a) {
-            a.printStackTrace();
-        }
-
+        list.deleteTransactionByIndeficator(arr[4].getUuid());
         arr = list.convertListToArray(list);
         for(int index = 0; arr[index] != null; index++) {
             System.out.println("Sender: " + arr[index].getSender().getName());
@@ -38,10 +33,6 @@ public class Program {
         }
 
         ud = UUID.randomUUID();
-        try {
-            list.deleteTransactionByIndeficator(ud);
-        } catch(TransactionNotFoundException a) {
-            a.printStackTrace();
-        }
+        list.deleteTransactionByIndeficator(ud);
     }
 }

@@ -1,5 +1,5 @@
 public class Program {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UserNotFoundException {
         UsersArrayList userList = new UsersArrayList();
 
         userList.addUser(new User("Karim", 1000));
@@ -16,10 +16,7 @@ public class Program {
         userList.addUser(new User("Mark", 1000));
         System.out.println("Number of users - " + userList.getNumOfUsers());
         System.out.println("By index - " + userList.getUserWithIndex(11).getName());
-        try {
-            System.out.println("By id - " + userList.getUserWithId(0).getName());
-        } catch (UserNotFoundException e) {
-            e.printStackTrace();
-        }
+        System.out.println("By id - " + userList.getUserWithId(1).getName());
+        System.out.println("By id - " + userList.getUserWithId(-1).getName());
     }
 }
