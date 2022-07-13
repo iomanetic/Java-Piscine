@@ -32,6 +32,16 @@ public class User {
     }
 
     public void setBalance(int balance) {
+        if(balance < 0) {
+            balance = 0;
+        }
         this.balance = balance;
+    }
+
+    public void setName(String name) {
+        if(name.length() == 0) {
+            name = "Anonimus";
+        }
+        this.name = name;
     }
 }

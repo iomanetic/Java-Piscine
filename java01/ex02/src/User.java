@@ -2,19 +2,19 @@
 public class User {
     private final Integer id;
 
-    private Integer countId;
-
     private String name;
 
     private Integer balance;
 
     public User(String name, int balance) {
         this.name = name;
-        if(name.length() == 0)
+        if(name.length() == 0) {
             this.name = "Anonimus";
+        }
         this.balance = balance;
-        if(this.balance < 0)
+        if(this.balance < 0) {
             this.balance = 0;
+        }
         this.id = UserIdsGenerator.getInstance().generateId();
     }
 
@@ -31,6 +31,16 @@ public class User {
     }
 
     public void setBalance(int balance) {
+        if(balance < 0) {
+            balance = 0;
+        }
         this.balance = balance;
+    }
+
+    public void setName(String name) {
+        if(name.length() == 0) {
+            name = "Anonimus";
+        }
+        this.name = name;
     }
 }

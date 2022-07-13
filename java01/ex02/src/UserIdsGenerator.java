@@ -7,8 +7,9 @@ public class UserIdsGenerator {
     private UserIdsGenerator() { }
 
     public static UserIdsGenerator getInstance() {
-        if(IdGenerate == null)
+        if(IdGenerate == null) {
             IdGenerate = new UserIdsGenerator();
+        }
         return (IdGenerate);
     }
 

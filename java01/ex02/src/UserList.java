@@ -2,9 +2,9 @@ public interface UserList {
 
     public void addUser(User user);
 
-    public void getUserWithId(Integer id);
+    public User getUserWithId(Integer id) throws UserNotFoundException;
 
-    public void getUserWithIndex(Integer index);
+    public User getUserWithIndex(Integer index);
 
-    public void getNumOfUsers();
+    public Integer getNumOfUsers();
 }

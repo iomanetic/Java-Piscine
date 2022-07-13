@@ -23,23 +23,29 @@ public class UsersArrayList implements UserList {
         userCount++;
     }
 
-    public void getUserWithId(Integer id) {
-
+    public User getUserWithId(Integer id) throws UserNotFoundException {
+        for(int checkId = 0; checkId < userCount; checkId++) {
+            if(id.equals(userList[checkId].getId())) {
+                return (userList[checkId]);
+            }
+        }
+        throw new UserNotFoundException("User not found");
     }
 
-    public void getUserWithIndex(Integer index) {
-
+    public User getUserWithIndex(Integer index) {
+        return (this.userList[index]);
     }
 
-    public void getNumOfUsers() {
-
+    public Integer getNumOfUsers() {
+        return (this.userCount);
     }
 
     private void increaseList() {
         User[] userListNew = new User[ARRAY_SIZE * size];
 
-        for(int count = 0; count < userCount; count++)
+        for(int count = 0; count < userCount; count++) {
             userListNew[count] = userList[count];
+        }
         userList = userListNew;
     }
 }
