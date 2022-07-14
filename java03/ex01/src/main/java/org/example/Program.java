@@ -3,8 +3,8 @@ package org.example;
 public class Program {
     public static void main(String[] args) {
         int numOfPrint;
-        EggThread eggThread;
-        HenThread henThread;
+        MyThread eggThread;
+        MyThread henThread;
 
         if(args.length != 1 || !args[0].startsWith("--count=")) {
             System.err.println("Invalid argument");
@@ -17,8 +17,8 @@ public class Program {
             System.exit(-1);
         }
 
-        eggThread = new EggThread(numOfPrint);
-        henThread = new HenThread(numOfPrint);
+        eggThread = new MyThread(numOfPrint, "Egg");
+        henThread = new MyThread(numOfPrint, "Hen");
 
         eggThread.start();
         henThread.start();
