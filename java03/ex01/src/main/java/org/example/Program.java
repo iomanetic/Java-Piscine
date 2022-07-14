@@ -29,13 +29,5 @@ public class Program {
         } catch (InterruptedException exc) {
             exc.printStackTrace();
         }
-
-        printHuman(numOfPrint);
-    }
-
-    private static void printHuman(int numOfPrint) {
-        for(int lNumOfPrint = 0; lNumOfPrint < numOfPrint; lNumOfPrint++) {
-            System.out.println("Human");
-        }
     }
 }

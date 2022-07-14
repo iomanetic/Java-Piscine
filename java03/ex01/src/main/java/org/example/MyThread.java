@@ -3,6 +3,7 @@ package org.example;
 public class MyThread extends Thread {
 
     private final int numOfPrint;
+    
     private final String message;
 
     private final static Object mutex = new Object();
