@@ -1,3 +1,5 @@
+package org.example;
+
 public class UsersArrayList implements UserList {
 
     private final Integer ARRAY_SIZE = 10;
