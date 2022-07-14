@@ -25,7 +25,7 @@ public class Program {
 
         try {
             henThread.join();
-            henThread.join();
+            eggThread.join();
         } catch (InterruptedException exc) {
             exc.printStackTrace();
         }
