@@ -5,7 +5,7 @@ rm -rf target
 mkdir target
 
 # compile and move class files in target directory
-javac -d target ImagesToChar/src/java/edu/school21/printer/*/*.java
+javac -d target src/java/edu/school21/printer/*/*.java
 
 # run program
 java -cp target edu/school21/printer/app/Program . 0 it.bmp
