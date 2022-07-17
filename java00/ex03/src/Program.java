@@ -85,7 +85,7 @@ public class Program {
     }
 
     private static int isError() {
-        System.out.println("Illegal Argument");
+        System.err.println("Illegal Argument");
         return (-1);
     }
 }

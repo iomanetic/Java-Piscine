@@ -6,6 +6,8 @@ public class User {
 
     private Integer balance;
 
+    TransactionsLinkedList transactionList;
+
     public User(String name, int balance) {
         this.name = name;
         if(name.length() == 0) {
