@@ -16,6 +16,7 @@ public class Program {
                 requestCount++;
         }
         System.out.println("Count of coffee-request – " + requestCount);
+        numIn.close();
     }
 
     public static boolean isPrime(int num) {

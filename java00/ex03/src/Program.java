@@ -9,8 +9,10 @@ public class Program {
         String inputWeek = input.nextLine();
 
         while(!inputWeek.equals(STOP_WORD)) {
-            if(!inputWeek.equals("Week " + numOfWeek))
+            if(!inputWeek.equals("Week " + numOfWeek)) {
+                input.close();
                 System.exit(isError());
+            }
             allGrades = packGrade(getMinGrade(input), numOfWeek, allGrades);
             numOfWeek++;
             if(numOfWeek == 19)
@@ -19,6 +21,7 @@ public class Program {
         }
         for(byte countOfWeek = 1; countOfWeek < numOfWeek; countOfWeek++)
             printStat(unpackGrade(allGrades, countOfWeek), countOfWeek);
+        input.close();
     }
 
     private static long packGrade(int minGrade, byte numOfWeek, long allGrades) {
@@ -54,8 +57,10 @@ public class Program {
 
         while(countGrades < 5) {
             numOfInput = input.nextInt();
-            if(numOfInput < 1 || numOfInput > 9)
+            if(numOfInput < 1 || numOfInput > 9) {
+                input.close();
                 System.exit(isError());
+            }
             if(countGrades == 0)
                 minNumOfInput = numOfInput;
             if(minNumOfInput > numOfInput)
