@@ -19,7 +19,8 @@ public class ImageToChar {
     }
 
     public char[][] convertImageToChar() throws IOException {
-        BufferedImage image = ImageIO.read(new FileInputStream(this.pathToImage));
+        FileInputStream file = new FileInputStream(this.pathToImage);
+        BufferedImage image = ImageIO.read(file);
         int xSizeImage = image.getWidth();
         int ySizeImage = image.getHeight();
         char[][] imageToChar = new char[ySizeImage][xSizeImage];
@@ -38,6 +39,7 @@ public class ImageToChar {
                 }
             }
         }
+        file.close();
         return (imageToChar);
     }
 
