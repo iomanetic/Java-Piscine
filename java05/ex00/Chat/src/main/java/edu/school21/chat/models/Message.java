@@ -1,4 +1,4 @@
-package edu.school21.chat;
+package edu.school21.chat.models;
 
 import java.text.DateFormat;
 import java.util.Objects;
