@@ -6,12 +6,12 @@ import java.util.Objects;
 public class Message {
 
     private Integer messageId;
-    private Integer messageAutor;
+    private User messageAutor;
     private ChatRoom chatWhereIsMessage;
     private String messageText;
     private DateFormat dateAndTime;
 
-    public Message(Integer messageId, Integer messageAutor, ChatRoom chatWhereIsMessage,
+    public Message(Integer messageId, User messageAutor, ChatRoom chatWhereIsMessage,
                    String messageText, DateFormat dateAndTime) {
         this.messageId = messageId;
         this.messageAutor = messageAutor;
@@ -24,7 +24,7 @@ public class Message {
         return (this.messageId);
     }
 
-    public Integer getMessageAutor() {
+    public User getMessageAutor() {
         return (this.messageAutor);
     }
 
@@ -38,6 +38,26 @@ public class Message {
 
     public DateFormat getDateAndTime() {
         return (this.dateAndTime);
+    }
+
+    public void setMessageId(Integer messageId) {
+        this.messageId = messageId;
+    }
+
+    public void setMessageAutor(User messageAutor) {
+        this.messageAutor = messageAutor;
+    }
+
+    public void setChatWhereIsMessage(ChatRoom chatWhereIsMessage) {
+        this.chatWhereIsMessage = chatWhereIsMessage;
+    }
+
+    public void setMessageText(String messageText) {
+        this.messageText = messageText;
+    }
+
+    public void setDateAndTime(DateFormat dateAndTime) {
+        this.dateAndTime = dateAndTime;
     }
 
     @Override

@@ -9,7 +9,7 @@ public class User {
     private String login;
     private String password;
     private ArrayList<ChatRoom> createdRooms;
-    private ArrayList<ChatRoom> chatsSocializes;
+    private ArrayList<ChatRoom> roomsSocializes;
 
     public User(Integer userId, String login, String password,
                 ArrayList<ChatRoom> createdRooms, ArrayList<ChatRoom> chatsSocializes) {
@@ -17,7 +17,7 @@ public class User {
         this.login = login;
         this.password = password;
         this.createdRooms = createdRooms;
-        this.chatsSocializes = chatsSocializes;
+        this.roomsSocializes = chatsSocializes;
     }
 
     public Integer getUserId() {
@@ -37,7 +37,19 @@ public class User {
     }
 
     public ArrayList<ChatRoom> getChatsSocializes() {
-        return (this.chatsSocializes);
+        return (this.roomsSocializes);
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
@@ -52,12 +64,12 @@ public class User {
         return (userId == user.userId && Objects.equals(login, user.login)
                         && Objects.equals(password, user.password)
                         && Objects.equals(createdRooms, user.createdRooms)
-                        && Objects.equals(chatsSocializes, user.chatsSocializes));
+                        && Objects.equals(roomsSocializes, user.roomsSocializes));
     }
 
     @Override
     public int hashCode() {
-        return (Objects.hash(userId, login, password, createdRooms, chatsSocializes));
+        return (Objects.hash(userId, login, password, createdRooms, roomsSocializes));
     }
 
     @Override
@@ -67,7 +79,7 @@ public class User {
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", createdRooms=" + createdRooms +
-                ", chatsSocializes=" + chatsSocializes +
+                ", chatsSocializes=" + roomsSocializes +
                 '}');
     }
 }

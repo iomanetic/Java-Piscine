@@ -6,11 +6,11 @@ import java.util.Objects;
 public class ChatRoom {
 
     private Integer chatRoomId;
-    private Integer chatRoomOwner;
+    private User chatRoomOwner;
     private String chatRoomName;
     private ArrayList<Message> listOfMessages;
 
-    public ChatRoom(Integer chatRoomId, Integer chatRoomOwner, String chatRoomName,
+    public ChatRoom(Integer chatRoomId, User chatRoomOwner, String chatRoomName,
                 ArrayList<Message> listOfMessages) {
         this.chatRoomId = chatRoomId;
         this.chatRoomOwner = chatRoomOwner;
@@ -22,7 +22,7 @@ public class ChatRoom {
         return (this.chatRoomId);
     }
 
-    public Integer getChatRoomOwner() {
+    public User getChatRoomOwner() {
         return (this.chatRoomOwner);
     }
 
@@ -32,6 +32,18 @@ public class ChatRoom {
 
     public ArrayList<Message> getListOfMessages() {
         return (this.listOfMessages);
+    }
+
+    public void setChatRoomId(Integer chatRoomId) {
+        this.chatRoomId = chatRoomId;
+    }
+
+    public void setChatRoomOwner(User chatRoomOwner) {
+        this.chatRoomOwner = chatRoomOwner;
+    }
+
+    public void setChatRoomName(String chatRoomName) {
+        this.chatRoomName = chatRoomName;
     }
 
     @Override
