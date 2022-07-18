@@ -8,11 +8,11 @@ public class User {
     private int userId;
     private String login;
     private String password;
-    private ArrayList<Chat> createdRooms;
-    private ArrayList<Chat> chatsSocializes;
+    private ArrayList<ChatRoom> createdRooms;
+    private ArrayList<ChatRoom> chatsSocializes;
 
     public User(int userId, String login, String password,
-                ArrayList<Chat> createdRooms, ArrayList<Chat> chatsSocializes) {
+                ArrayList<ChatRoom> createdRooms, ArrayList<ChatRoom> chatsSocializes) {
         this.userId = userId;
         this.login = login;
         this.password = password;
@@ -32,11 +32,11 @@ public class User {
         return (this.password);
     }
 
-    public ArrayList<Chat> getCreatedRooms() {
+    public ArrayList<ChatRoom> getCreatedRooms() {
         return (this.createdRooms);
     }
 
-    public ArrayList<Chat> getChatsSocializes() {
+    public ArrayList<ChatRoom> getChatsSocializes() {
         return (this.chatsSocializes);
     }
 

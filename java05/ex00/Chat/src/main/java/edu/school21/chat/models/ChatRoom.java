@@ -3,14 +3,14 @@ package edu.school21.chat.models;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Chat {
+public class ChatRoom {
 
     private int chatRoomId;
     private int chatRoomOwner;
     private String chatRoomName;
     private ArrayList<Message> listOfMessages;
 
-    public Chat(int chatRoomId, int chatRoomOwner, String chatRoomName,
+    public ChatRoom(int chatRoomId, int chatRoomOwner, String chatRoomName,
                 ArrayList<Message> listOfMessages) {
         this.chatRoomId = chatRoomId;
         this.chatRoomOwner = chatRoomOwner;
@@ -42,7 +42,7 @@ public class Chat {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Chat chat = (Chat) o;
+        ChatRoom chat = (ChatRoom) o;
         return (chatRoomId == chat.chatRoomId
                 && chatRoomOwner == chat.chatRoomOwner
                 && Objects.equals(chatRoomName, chat.chatRoomName)

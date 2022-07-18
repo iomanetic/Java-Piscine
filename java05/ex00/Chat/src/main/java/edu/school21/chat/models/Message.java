@@ -7,11 +7,11 @@ public class Message {
 
     private int messageId;
     private int messageAutor;
-    private Chat chatWhereIsMessage;
+    private ChatRoom chatWhereIsMessage;
     private String messageText;
     private DateFormat dateAndTime;
 
-    public Message(int messageId, int messageAutor, Chat chatWhereIsMessage,
+    public Message(int messageId, int messageAutor, ChatRoom chatWhereIsMessage,
                    String messageText, DateFormat dateAndTime) {
         this.messageId = messageId;
         this.messageAutor = messageAutor;
@@ -28,7 +28,7 @@ public class Message {
         return (this.messageAutor);
     }
 
-    public Chat getMessageRoom() {
+    public ChatRoom getMessageRoom() {
         return (this.chatWhereIsMessage);
     }
 
