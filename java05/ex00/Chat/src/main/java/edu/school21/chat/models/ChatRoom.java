@@ -68,11 +68,10 @@ public class ChatRoom {
 
     @Override
     public String toString() {
-        return ("Chat{" +
-                "chatRoomId=" + chatRoomId +
-                ", chatRoomOwner=" + chatRoomOwner +
-                ", chatRoomName='" + chatRoomName + '\'' +
-                ", listOfMessages=" + listOfMessages +
-                '}');
+        return ("Chat:" +
+                " chatRoomId=" + chatRoomId +
+                " chatRoomOwner=" + chatRoomOwner +
+                " chatRoomName='" + chatRoomName + '\'' +
+                " listOfMessages=" + listOfMessages);
     }
 }

@@ -74,12 +74,11 @@ public class User {
 
     @Override
     public String toString() {
-        return ("User{" +
+        return ("User: " +
                 "userId=" + userId +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", createdRooms=" + createdRooms +
-                ", chatsSocializes=" + roomsSocializes +
-                '}');
+                ", chatsSocializes=" + roomsSocializes);
     }
 }

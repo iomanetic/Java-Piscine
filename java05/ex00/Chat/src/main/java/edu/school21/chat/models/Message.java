@@ -1,18 +1,18 @@
 package edu.school21.chat.models;
 
-import java.text.DateFormat;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Message {
 
-    private Integer messageId;
+    private Long messageId;
     private User messageAutor;
     private ChatRoom chatWhereIsMessage;
     private String messageText;
-    private DateFormat dateAndTime;
+    private LocalDateTime dateAndTime;
 
-    public Message(Integer messageId, User messageAutor, ChatRoom chatWhereIsMessage,
-                   String messageText, DateFormat dateAndTime) {
+    public Message(Long messageId, User messageAutor, ChatRoom chatWhereIsMessage,
+                   String messageText, LocalDateTime dateAndTime) {
         this.messageId = messageId;
         this.messageAutor = messageAutor;
         this.chatWhereIsMessage = chatWhereIsMessage;
@@ -20,7 +20,7 @@ public class Message {
         this.dateAndTime = dateAndTime;
     }
 
-    public Integer getMessageId() {
+    public Long getMessageId() {
         return (this.messageId);
     }
 
@@ -36,11 +36,11 @@ public class Message {
         return (this.messageText);
     }
 
-    public DateFormat getDateAndTime() {
+    public LocalDateTime getDateAndTime() {
         return (this.dateAndTime);
     }
 
-    public void setMessageId(Integer messageId) {
+    public void setMessageId(Long messageId) {
         this.messageId = messageId;
     }
 
@@ -56,7 +56,7 @@ public class Message {
         this.messageText = messageText;
     }
 
-    public void setDateAndTime(DateFormat dateAndTime) {
+    public void setDateAndTime(LocalDateTime dateAndTime) {
         this.dateAndTime = dateAndTime;
     }
 
@@ -83,12 +83,11 @@ public class Message {
 
     @Override
     public String toString() {
-        return ("Message{" +
-                "messageId=" + messageId +
-                ", messageAutor='" + messageAutor + '\'' +
-                ", messageRoom='" + chatWhereIsMessage + '\'' +
-                ", messageText='" + messageText + '\'' +
-                ", dateAndTime=" + dateAndTime +
-                '}');
+        return ("Message:" +
+                "\nmessageId=" + messageId +
+                "\nmessageAutor='" + messageAutor + '\'' +
+                "\nmessageRoom='" + chatWhereIsMessage + '\'' +
+                "\nmessageText='" + messageText + '\'' +
+                "\ndateAndTime=" + dateAndTime);
     }
 }
