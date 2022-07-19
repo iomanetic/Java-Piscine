@@ -22,7 +22,7 @@ public class MessagesRepositoryJdbcImpl implements MessagesRepository {
 
     @Override
     public Optional<Message> findById(Long id) throws SQLException {
-        String SQL_QUERY = "SELECT * FROM chat.messages WHERE message_id = " + id;
+        final String SQL_QUERY = "SELECT * FROM chat.messages WHERE message_id = " + id;
         Connection connect = dataSource.getConnection();
         PreparedStatement prs = connect.prepareStatement(SQL_QUERY);
         ResultSet result = prs.executeQuery();
