@@ -19,10 +19,42 @@ public class MessagesRepositoryJdbcImpl implements MessagesRepository {
     }
 
     @Override
+    public void update(Message message) throws SQLException {
+        String SQL_QUERY = "UPDATE chat.messages SET "
+                            + "message_autor = ?, "
+                            + "room_id = ?, "
+                            + "message_text = ?, "
+                            + "date_of_message = ? "
+                            + "WHERE message_id = ?;";
+        try {
+            Connection connect = dataSource.getConnection();
+            PreparedStatement prs = connect.prepareStatement(SQL_QUERY);
+            prs.setLong(1, message.getMessageAutor().getUserId());
+            prs.setLong(2, message.getMessageRoom().getChatRoomId());;
+            prs.setString(3, message.getMessageText());
+            try {
+                prs.setTimestamp(4, Timestamp.valueOf(message.getDateAndTime()));
+            } catch (NullPointerException ex) {
+                prs.setTimestamp(4, null);
+            }
+            prs.setLong(5, message.getMessageId());
+            try {
+                prs.execute();
+            } catch (SQLException ex) {
+                throw new NotSavedSubEntityException("Can't added message");
+            }
+            connect.close();
+            prs.close();
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+    @Override
     public void save(Message message) throws SQLException {
         String SQL_QUERY = "INSERT INTO chat.messages(message_autor, room_id, message_text, date_of_message) " +
                             "VALUES (" + "'" + message.getMessageAutor().getUserId() + "'" + ',' + "'" + message.getMessageRoom().getChatRoomId() + "'"+
-                            ',' + "'" + message.getMessageText() + "'" + ',' + "'" + message.getDateAndTime() + "'" + ')';
+                            ',' + "'" + message.getMessageText() + "'" + ',' + "'" + message.getDateAndTime() + "'" + ");";
         Connection connect = dataSource.getConnection();
         PreparedStatement prs = connect.prepareStatement(SQL_QUERY, Statement.RETURN_GENERATED_KEYS);
         try {
@@ -39,7 +71,7 @@ public class MessagesRepositoryJdbcImpl implements MessagesRepository {
 
     @Override
     public Optional<Message> findById(Long id) throws SQLException {
-        String SQL_QUERY = "SELECT * FROM chat.messages WHERE message_id = " + id;
+        String SQL_QUERY = "SELECT * FROM chat.messages WHERE message_id = " + id + ';';
         Connection connect = dataSource.getConnection();
         PreparedStatement prs = connect.prepareStatement(SQL_QUERY);
         ResultSet result = prs.executeQuery();
