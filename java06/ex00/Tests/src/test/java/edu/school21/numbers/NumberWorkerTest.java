@@ -16,7 +16,7 @@ public class NumberWorkerTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {127, 131 ,137, 139, 149, 151, 157, 163, 167, 173, 2})
+    @ValueSource(ints = {127, 131 ,137, 139, 149, 151, 157, 163, 167, 173})
     void isPrimeForPrimes(int num) {
         Assertions.assertTrue(numberWorker.isPrime(num));
     }
@@ -34,7 +34,7 @@ public class NumberWorkerTest {
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = {"/data.csv"}, delimiter = ',')
+    @CsvFileSource(resources = "/data.csv", delimiter = ',')
     void sumOfNumber(int x, int y) {
         Assertions.assertEquals(numberWorker.digitSum(x), y);
     }
